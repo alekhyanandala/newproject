@@ -1,23 +1,27 @@
-import cv2
-import os
+import cv2 
 import streamlit as st
-from pathlib import Path
-from PIL import Image
-def collect_dataset():
-    st.subheader("Image with student name as file name")
-    image_file = st.file_uploader("Upload Images", type=["jpg"])
-    if image_file is not None:
 
-	    # To See details
-	    file_details = {"filename":image_file.name,"filetype":image_file.type,"filesize":image_file.size}
-                                
-	    st.write(file_details)
-	    cv2.imwrite("C:\\Users\\nanda\\OneDrive\\Desktop\\smart_attendance_system\\Images",image_file)
-	    
-
-            # To View Uploaded Image
-	    st.image(load_image(image_file),width=250)
-	    with open(os.path.join("C:\\Users\\nanda\\OneDrive\\Desktop\\smart_attendance_system\\Images",uploadedfile.name),"wb") as f:
-                f.write(uploadedfile.getbuffer())
-            #st.success("File Saved")
-
+def Enroll_new_entry():
+    cam = cv2.VideoCapture(0,cv2.CAP_DSHOW)
+    detector=cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+    password = input('Enter three digit password: ')
+    if (password=="123"):
+        StudentName=input('Enter student name: ')
+        sampleNum=0
+        while(True):
+            ret, img = cam.read()
+            gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+            faces = detector.detectMultiScale(gray, 1.3, 5)
+            for (x,y,w,h) in faces:
+                cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
+                #saving the captured face in the Images folder
+                cv2.imwrite("Images/"+ StudentName + "."+"jpg", gray[y:y+h,x:x+w])
+                sampleNum=sampleNum+1
+                cv2.imshow('frame',img)
+            # break if the sample number is greater than 1
+            if sampleNum>1:
+                break
+        cam.release()
+        cv2.destroyAllWindows()
+    else:
+        print("password incorrect")
