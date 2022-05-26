@@ -1,5 +1,5 @@
 # smart_attendance
-Mark attendance with time using face_recognition
+Mark attendance with time and date using face_recognition
 
 
 
