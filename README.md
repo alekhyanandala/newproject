@@ -16,20 +16,15 @@ A web Application developed via streamlit automating attendance system via face_
 ## Directory Tree 
 ```
 
+├── Images
 ├── Attendance.csv
 ├── README.md
-├── activation.bat
 ├── dataset_maker.py
 ├── limitation.txt
 ├── requirements.txt
 ├── web_app.py
 
 
-
-```
-In above directory structure outputs folder is created only when images and videos is required by user. Facility for choosing this option is given at top of side-bar of application.
-
-)
 
 
 
