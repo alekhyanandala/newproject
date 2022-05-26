@@ -8,7 +8,7 @@ import io
 from PIL import Image
 from datetime import datetime
 import warnings
-from dataset_maker import collect_dataset
+from dataset_maker import Enroll_new_entry
 
 warnings.filterwarnings("ignore")
 
@@ -17,12 +17,11 @@ path = 'images'
 images = []
 personNames = []
 myList = os.listdir(path)
-print(myList)
+
 for cu_img in myList:
     current_Img = cv2.imread(f'{path}/{cu_img}')
     images.append(current_Img)
     personNames.append(os.path.splitext(cu_img)[0])
-print(personNames)
 
 
 def faceEncodings(images):
@@ -43,10 +42,10 @@ def attendance(name):
         #iterate over each line
         for line in myDataList:
 
-            #split with comma
+            #split image anme : studentname.jpg with comma
             entry = line.split(',')
 
-            #after splitting extarct name for each line and append it to list of names
+            #after splitting extract student name for each line and append it to list of names
             nameList.append(entry[0])
 
         if name not in nameList:
@@ -59,18 +58,15 @@ def attendance(name):
 encodeListKnown = faceEncodings(images)
 
 
-    
-
-
 def main():
     """Smart Attendance System"""
 
     st.title("Streamlit")
 
     html_temp = """
-    <body style="background-color:Blue;">
-    <div style="background-color:teal ;padding:10px">
-    <h2 style="color:white;text-align:center;">Attendance With Face Recognition</h2>
+    <body style="background-color:white;">
+    <div style="background-color:#54095A ;padding:4px">
+    <h1 style="font-family:'sans-serif';color:white;font-size: 38px;text-align:center;">Attendance using Face Recognition</h2>
     </div>
     <br>
     </body>
@@ -78,16 +74,16 @@ def main():
     st.markdown(html_temp, unsafe_allow_html=True)
     st.set_option('deprecation.showfileUploaderEncoding', False)
 
-    if st.button("Collect Data"):
-        collect_dataset()
+    if st.button("New Registration"):
+        Enroll_new_entry()
 
 
 
-    if st.button("Show Attendance"):
+    if st.button("Check your Attendance here !!"):
         attendancefile = pd.read_csv("Attendance.csv")
         st.write(attendancefile)
 
-    if st.button('Real Time'):
+    if st.button('Mark your attendance'):
         cap = cv2.VideoCapture(0)
         
         while True:
@@ -109,8 +105,8 @@ def main():
 
                     y1,x2,y2,x1 = faceLoc
                     y1,x2,y2,x1 = y1*4,x2*4,y2*4,x1*4
-                    cv2.rectangle(frame,(x1,y1),(x2,y2),(0,255,0),2)
-                    cv2.rectangle(frame,(x1,y2-35),(x2,y2),(0,255,0),cv2.FILLED)
+                    cv2.rectangle(frame,(x1,y1),(x2,y2),(255,167,59),2)
+                    cv2.rectangle(frame,(x1,y2-35),(x2,y2),(255,167,59),cv2.FILLED)
                     cv2.putText(frame,name,(x1+6,y2-6),cv2.FONT_HERSHEY_COMPLEX,1,(255,255,255),2)
                     attendance(name)
 
