@@ -8,7 +8,7 @@ import io
 from PIL import Image
 from datetime import datetime
 import warnings
-from dataset_maker import Enroll_new_entry
+from dataset_maker import enroll_new_entry
 
 warnings.filterwarnings("ignore")
 
@@ -24,6 +24,7 @@ for cu_img in myList:
     personNames.append(os.path.splitext(cu_img)[0])
 
 
+
 def faceEncodings(images):
     encodeList = []
     for img in images:
@@ -37,26 +38,25 @@ def attendance(name):
 
     	#read file line by line
         myDataList = f.readlines()
-        nameList = []
+        nameList = [[],[]]
+        dateList = []
 
         #iterate over each line
         for line in myDataList:
 
-            #split image anme : studentname.jpg with comma
+            #split with comma
             entry = line.split(',')
 
-            #after splitting extract student name for each line and append it to list of names
+            #after splitting extarct name for each line and append it to list of names
             nameList.append(entry[0])
-
-        if name not in nameList:
-            now = datetime.now()
-            tStr = now.strftime('%H:%M:%S')
-            dtString = now.strftime('%d:%m:%Y')
-            f.writelines(f'\n{name},{tStr},{dtString}')
-
-
+            
+        now = datetime.now()
+        tStr = now.strftime('%H:%M:%S')
+        dtString = now.strftime('%d:%m:%Y')
+        f.writelines(f'\n{name},{tStr},{dtString}')
+        
+        
 encodeListKnown = faceEncodings(images)
-
 
 def main():
     """Smart Attendance System"""
@@ -64,7 +64,7 @@ def main():
     st.title("Streamlit")
 
     html_temp = """
-    <body style="background-color:white;">
+    <body style="background-color:#F2FDFC;">
     <div style="background-color:#54095A ;padding:4px">
     <h1 style="font-family:'sans-serif';color:white;font-size: 38px;text-align:center;">Attendance using Face Recognition</h2>
     </div>
@@ -75,7 +75,7 @@ def main():
     st.set_option('deprecation.showfileUploaderEncoding', False)
 
     if st.button("New Registration"):
-        Enroll_new_entry()
+        enroll_new_entry()
 
 
 
@@ -85,10 +85,11 @@ def main():
 
     if st.button('Mark your attendance'):
         cap = cv2.VideoCapture(0)
-        
-        while True:
+        count =1
+        while (count<2):
             #read from video and return success status and image
             ret, frame = cap.read()
+            count=count+1
             faces = cv2.resize(frame, (0, 0), None, 0.25, 0.25)
             faces = cv2.cvtColor(faces, cv2.COLOR_BGR2RGB)
 
@@ -113,9 +114,7 @@ def main():
             cv2.imshow('Webcam', frame)
             k = cv2.waitKey(1)
             # if the escape key is been pressed, the app will stop
-            if k%256 == 27:
-                print('escape hit, closing the app')
-                break
+            
                 
             
         #release camera object
@@ -124,3 +123,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
