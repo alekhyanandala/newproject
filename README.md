@@ -36,7 +36,8 @@ A web Application developed via streamlit automating attendance system using Ope
 3.	For new registration tap “New registration”. Then, command prompt asks for password. Enter the password.
 Then enter your name with which you want to register.
 
-             ![image](https://user-images.githubusercontent.com/105556144/170772689-ed622a12-04fa-4837-8a6b-e6539f935ca1.png)
+             ![image](https://user-images.githubusercontent.com/105556144/170772979-24b5e2f4-6e64-4a9b-885d-f79b6db570c2.png)
+
 
 4.	To mark attendance tap “Mark your attendance”.
 5.	To check whether attendance is registered or not tap “Check your attendance here !!”. It displays attendance list with Name, Time, Date.
