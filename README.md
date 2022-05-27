@@ -41,7 +41,8 @@ Then enter your name with which you want to register.
 
 4.	To mark attendance tap “Mark your attendance”.
 5.	To check whether attendance is registered or not tap “Check your attendance here !!”. It displays attendance list with Name, Time, Date.
-            ![image](https://user-images.githubusercontent.com/105556144/170772788-c67a7f2a-8ef2-457b-bcdc-4e798bf89cca.png)
+
+![image](https://user-images.githubusercontent.com/105556144/170772788-c67a7f2a-8ef2-457b-bcdc-4e798bf89cca.png)
 
 
 
