@@ -29,15 +29,12 @@ A web Application developed via streamlit automating attendance system using Ope
 
 1.	Open project directory in command prompt
 2.	Run web app in browser using command “streamlit run web_app.py”.This command directs to browser and open web page.
-
-             ![image](https://user-images.githubusercontent.com/105556144/170771477-448978e6-7e5d-4a10-b280-e09dff654a95.png)
-             ![image](https://user-images.githubusercontent.com/105556144/170772721-e5ad1ca7-d1ca-4830-8902-b734827de765.png)
+![image](https://user-images.githubusercontent.com/105556144/170773121-0e6b2860-08ac-4c93-8f7e-2a18ba72a453.png)
+![image](https://user-images.githubusercontent.com/105556144/170773203-054d4cce-2173-43df-a0d6-361e8dbcf945.png)
 
 3.	For new registration tap “New registration”. Then, command prompt asks for password. Enter the password.
 Then enter your name with which you want to register.
-
-             ![image](https://user-images.githubusercontent.com/105556144/170772979-24b5e2f4-6e64-4a9b-885d-f79b6db570c2.png)
-
+![image](https://user-images.githubusercontent.com/105556144/170773249-6e8808cf-b1a9-43bb-b468-3989212354eb.png)
 
 4.	To mark attendance tap “Mark your attendance”.
 5.	To check whether attendance is registered or not tap “Check your attendance here !!”. It displays attendance list with Name, Time, Date.
