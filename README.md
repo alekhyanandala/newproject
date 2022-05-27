@@ -6,7 +6,7 @@ Mark attendance with time using face recognition.
 ## Table of Content
   * [Overview](#overview)
   * [Directory Tree](#directory-tree)
-  *  To do
+  * [To do](#To-do)
 
 
 
