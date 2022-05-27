@@ -113,7 +113,7 @@ def main():
 
             cv2.imshow('Webcam', frame)
             k = cv2.waitKey(1)
-            # if the escape key is been pressed, the app will stop
+ 
             
                 
             
