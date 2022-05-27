@@ -1,4 +1,0 @@
-Enroll new entry does not works with streamlit. Use input via terminal instead
-
-
-
