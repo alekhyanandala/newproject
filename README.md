@@ -28,7 +28,7 @@ A web Application developed via streamlit automating attendance system using Ope
 ## To do
 
 1.	Open project directory in command prompt
-2.	Run web app in browser using command “streamlit run web_app.py”.This command directs to browser and open web page.
+2.	Run web app in browser using command “streamlit run web_app.py”.This command directs to browser and opens web page.
 
 ![image1](https://user-images.githubusercontent.com/105556144/170809221-afa1b331-8db1-4775-a132-42119039a43f.png)
 
