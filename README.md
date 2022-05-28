@@ -6,7 +6,9 @@ Mark attendance with time using face recognition.
 ## Table of Content
   * [Overview](#overview)
   * [Directory Tree](#directory-tree)
+  * [Installation](#installation)
   * [To do](#to-do)
+  
 
 
 
@@ -25,6 +27,18 @@ A web Application developed via streamlit automating attendance system using Ope
 ├── requirements.txt
 ├── webapp.py
 ```
+
+## Installation 
+
+1.Assuming python installed on your pc
+2.Install openCV lib using command
+  "pip install opencv-python"
+3.Install face_recognition lib by running command
+  "pip install face-recognition"
+4.Install streamlit on your windows using command
+  "pip install streamlit"
+  
+  
 ## To do
 
 1.	Open project directory in command prompt
