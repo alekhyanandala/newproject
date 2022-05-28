@@ -18,12 +18,12 @@ A web Application developed via streamlit automating attendance system using Ope
 ## Directory Tree 
 ```
 
-├── Attendance.csv
+├──Images
+├──Attendance.csv
 ├── README.md
 ├── activation.bat
 ├── dataset_maker.py
 ├── haarcascade_frontalface_default.xml
-├── limitation.txt
 ├── requirements.txt
 ├── webapp.py
 ```
