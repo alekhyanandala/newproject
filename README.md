@@ -31,10 +31,13 @@ A web Application developed via streamlit automating attendance system using Ope
 ## Installation 
 
 1.Assuming python installed on your pc
+
 2.Install openCV lib using command
   "pip install opencv-python"
+  
 3.Install face_recognition lib by running command
   "pip install face-recognition"
+  
 4.Install streamlit on your windows using command
   "pip install streamlit"
   
