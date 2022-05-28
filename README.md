@@ -1,5 +1,5 @@
 ﻿# smart_attendance
-Mark attendance with time using face recognition.
+Smart attendance system which records attendance with time and date via streamlit using face recognition.
 
 
 
