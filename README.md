@@ -53,6 +53,7 @@ A web Application developed via streamlit automating attendance system using Ope
 Then enter your name with which you want to register.
 
 ![image2](https://user-images.githubusercontent.com/105556144/170809251-f415f2c2-a3a9-452d-9c04-bfac96c98fdb.png)
+
 ![image3](https://user-images.githubusercontent.com/105556144/170809259-2d7760fc-173e-48c9-9db6-f328d76f02a0.png)
 
 4.	To mark attendance tap “Mark your attendance”.
