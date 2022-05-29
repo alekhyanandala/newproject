@@ -1,7 +1,7 @@
 import cv2 
 import streamlit as st
 
-def Enroll_new_entry():
+def enroll_new_entry():
     cam = cv2.VideoCapture(0,cv2.CAP_DSHOW)
     detector=cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
     password = input('Enter three digit password: ')
